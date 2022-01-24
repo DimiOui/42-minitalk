@@ -6,7 +6,7 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 10:25:17 by dpaccagn          #+#    #+#             */
-/*   Updated: 2022/01/18 16:30:39 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/01/24 15:17:14 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stddef.h>
 
 //	PART 1
-
+int		ft_printf(const char *format, ...);
 void	ft_bzero(void *str, size_t len);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
