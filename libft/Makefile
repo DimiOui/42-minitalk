@@ -6,7 +6,7 @@
 #    By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/24 14:49:36 by dpaccagn          #+#    #+#              #
-#    Updated: 2022/01/24 15:17:31 by dimioui          ###   ########.fr        #
+#    Updated: 2022/01/25 18:05:47 by dimioui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,7 @@ SRCS		=	$(addprefix srcs/, \
 				ft_putendl_fd.c \
 				ft_putnbr_fd.c\
 				ft_printf.c\
+				ft_strjoin_char.c\
 				)
 
 LST			=	$(addprefix srcs/, \

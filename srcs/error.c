@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 11:26:55 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/25 18:01:10 by dimioui          ###   ########.fr       */
+/*   Created: 2022/01/25 18:00:08 by dimioui           #+#    #+#             */
+/*   Updated: 2022/01/25 18:00:56 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
+#include "../includes/minitalk.h"
 
-# include <signal.h>
-# include <unistd.h>
-# include <stdio.h>
-# include "libft.h"
-
-void	error(int error);
-typedef struct s_infos
+void	error(int error)
 {
-	char	c;
-	int		bits;
-	char	*str;
-	int		pid;
-}	t_infos;
-
-#endif
-
+	if (error == 0)
+	{
+		ft_printf("Error | Could not send signal to server ===\n");
+		ft_printf("=== Check |           [PID_number]          ===\n");
+	}
+	else if (error == 1)
+	{
+		ft_printf("=== Error encountered while");
+		ft_putendl_fd(" sending signal to client ===", 2);
+	}
+	exit (1);
+}
