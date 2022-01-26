@@ -3,25 +3,27 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+         #
+#    By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/18 14:20:53 by dimioui           #+#    #+#              #
-#    Updated: 2022/01/25 18:12:49 by dimioui          ###   ########.fr        #
+#    Updated: 2022/01/26 12:19:19 by dpaccagn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SERVER = server
 CLIENT = client
-FLAGS = -Wall -Wextra -Werror -g
+FLAGS = -Wall -Wextra -Werror -g -fsanitize=address
 
 SRCS_SERV = $(addprefix srcs/, \
 			server.c \
+			utils.c \
 			)
 
 OBJS_SERV = $(SRCS_SERV:.c=.o)
 
 SRCS_CLIENT = $(addprefix srcs/, \
 				client.c \
+				utils.c \
 				)
 
 OBJS_CLIENT = $(SRCS_CLIENT:.c=.o)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minitalk.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 11:26:55 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/25 18:01:10 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/01/26 12:03:20 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <stdio.h>
 # include "libft.h"
 
-void	error(int error);
 typedef struct s_infos
 {
 	char	c;
@@ -27,5 +26,7 @@ typedef struct s_infos
 	int		pid;
 }	t_infos;
 
-#endif
+void	error(int error);
+int		ft_strisdigit(char *str);
 
+#endif
