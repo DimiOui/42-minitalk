@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 11:28:57 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/26 12:20:44 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/01/27 16:09:01 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,10 +84,11 @@ int	main(int ac, char **av)
 		signal(SIGUSR1, signal_handler);
 		signal(SIGUSR2, signal_handler);
 		g_infos.pid = ft_atoi(av[1]);
+		if (g_infos.pid == 0)
+			error (0);
 		my_handler_to_binary(ft_atoi(av[1]), av[2]);
 		while (1)
 			pause();
 	}
-	else
 		return (0);
 }
