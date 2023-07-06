@@ -174,6 +174,7 @@ The Minitalk protocol follows the following workflow:
 5. If a `null` character `(0)` is received, it signifies the end of a message transmission.
 6. The server sends an acknowledgement signal (`SIGUSR2`) back to the client after successfully receiving a complete message.
 7. The client program waits for the acknowledgement signal and exits after receiving it.
+<br/>
 The communication between the client and server is performed through the transmission of binary signals, allowing the exchange of messages in a simple and efficient manner.
 
 </details>
