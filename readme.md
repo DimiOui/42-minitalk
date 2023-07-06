@@ -59,7 +59,7 @@ The server program is responsible for receiving and processing the messages, whi
 ### Server Implementation
 In the `server.c` file, the server program sets up a signal handler `my_handler_to_char` to receive and process the binary signals sent by the client.
 
-```
+```c
 static void my_handler_to_char(int signum, siginfo_t *siginfo, void *context)
 {
     // ...
@@ -67,7 +67,7 @@ static void my_handler_to_char(int signum, siginfo_t *siginfo, void *context)
 ```
 Inside the signal handler, the received binary signals are interpreted to reconstruct characters. Each character is accumulated bit by bit until a complete character is received.
 
-```
+```c
 static void my_handler_to_char(int signum, siginfo_t *siginfo, void *context)
 {
     // ...
@@ -93,7 +93,7 @@ static void my_handler_to_char(int signum, siginfo_t *siginfo, void *context)
 ```
 Once a complete character is received, it can be processed or saved for further use. In the provided code, the server calls the `received_string` function, which displays the received string and sends a `SIGUSR2` signal back to the client to acknowledge successful reception.
 
-```
+```c
 static char *received_string(char *str)
 {
     // Display or process the received string
@@ -110,7 +110,7 @@ In the `client.c` file, the client program is responsible for converting the inp
 
 The `my_handler_to_binary` function takes care of converting the message into binary signals and sending them to the server process.
 
-```
+```c
 static void my_handler_to_binary(pid_t pid, char *str)
 {
     // ...
@@ -139,7 +139,7 @@ static void my_handler_to_binary(pid_t pid, char *str)
 ```
 The `kill_to_server` function is responsible for sending the `SIGUSR1` and `SIGUSR2` signals to the server process.
 
-```
+```c
 static void kill_to_server(int signum, int pid)
 {
     if (kill(pid, signum) == -1)
@@ -148,7 +148,7 @@ static void kill_to_server(int signum, int pid)
 ```
 The kill_null function sends a series of null signals to signify the end of the message transmission.
 
-```
+```c
 static int kill_null(int pid)
 {
 	int	i;
